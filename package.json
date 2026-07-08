@@ -1,0 +1,9 @@
+{
+  "name": "wvtr-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "WVTR — clean water nonprofit site with a Stripe-powered storefront.",
+  "dependencies": {
+    "stripe": "^16.12.0"
+  }
+}

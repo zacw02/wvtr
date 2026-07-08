@@ -1,0 +1,12 @@
+# Netlify configuration for the WVTR site.
+# Deploying this folder to Netlify gives you free static hosting AND the
+# serverless checkout function, with no server to manage.
+
+[build]
+  # The site is plain static files at the repo root — no build step needed.
+  publish = "."
+  functions = "netlify/functions"
+
+[functions]
+  # Bundle Node dependencies (the Stripe library) automatically.
+  node_bundler = "esbuild"

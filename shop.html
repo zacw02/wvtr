@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shop — WVTR Clean Water Projects</title>
+  <meta name="description" content="Shop WVTR merch and give. Every purchase supports clean drinking water projects for communities in need." />
+  <meta name="theme-color" content="#05080d" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Shop — WVTR" />
+  <meta property="og:description" content="Buy merch, fund clean water. Every purchase supports WVTR's projects." />
+  <meta property="og:url" content="https://wvtr.org/shop.html" />
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Yellowtail&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ===================================================================
+       HEADER — note the extra Cart button. "Shop" links back to this page,
+       other items jump to sections on the home page (index.html#...).
+       =================================================================== -->
+  <header class="site-header is-scrolled" id="top">
+    <div class="container">
+      <a class="brand" href="index.html" aria-label="WVTR home">
+        <svg class="brand__logo" viewBox="0 0 64 64" aria-hidden="true">
+          <g fill="none" stroke="#18aaff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M32 7c0 0 17 18 17 30a17 17 0 1 1-34 0C15 25 32 7 32 7z"/>
+            <path d="M23 39a9 9 0 0 0 9 9"/>
+          </g>
+        </svg>
+        <span>WVTR<span class="brand__tag">Clean Water Projects</span></span>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Primary">
+        <a href="index.html#crisis">Crisis</a>
+        <a href="index.html#work">Work</a>
+        <a href="index.html#gowba">Gowba</a>
+        <a href="index.html#story">Story</a>
+        <a href="shop.html" class="is-active">Shop</a>
+        <a href="index.html#contact">Contact</a>
+        <a class="btn btn--donate" href="index.html#donate">Donate</a>
+      </nav>
+
+      <button class="cart-btn" id="cartBtn" aria-label="Open cart" aria-haspopup="dialog">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="9" cy="21" r="1.6"/><circle cx="18" cy="21" r="1.6"/><path d="M2 3h3l2.4 12.2a2 2 0 0 0 2 1.6h8.5a2 2 0 0 0 2-1.6L23 7H6"/></svg>
+        <span class="cart-count" id="cartCount" hidden>0</span>
+      </button>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-controls="nav" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ===================================================================
+         STORE HERO
+         =================================================================== -->
+    <section class="shop-hero">
+      <img class="hero__sun" src="assets/img/sunburst.svg" alt="" aria-hidden="true" />
+      <div class="container" style="position:relative;z-index:3">
+        <span class="banner">WVTR Shop</span>
+        <h1>Wear It. <span class="script">fund it</span></h1>
+        <p>Every purchase helps fund clean drinking water projects for communities in need. Merch that means something.</p>
+      </div>
+      <div class="shop-hero__wave" aria-hidden="true"><img src="assets/img/wave.svg" alt="" /></div>
+    </section>
+
+    <!-- ===================================================================
+         STOREFRONT
+         Two modes:
+           • PREVIEW (default) — the placeholder product cards below show the
+             design and a working demo cart, so you can see the flow.
+           • LIVE — once Shopify details are filled into assets/js/shop-config.js,
+             the real store (products, variants, cart, secure checkout) renders
+             here automatically. See SHOP-SETUP.md.
+         =================================================================== -->
+    <section class="section sec-light" id="shop">
+      <div class="container">
+
+        <!-- Category filters (demo). In LIVE mode these map to Shopify collections. -->
+        <div class="shop-filters" role="group" aria-label="Filter products">
+          <button class="chip" data-filter="all" aria-pressed="true">All</button>
+          <button class="chip" data-filter="apparel" aria-pressed="false">Apparel</button>
+          <button class="chip" data-filter="accessories" aria-pressed="false">Accessories</button>
+          <button class="chip" data-filter="give" aria-pressed="false">Give</button>
+        </div>
+
+        <!-- PRODUCT GRID — rendered from assets/js/products.js.
+             Edit that file (or ask Claude) to add/change products. -->
+        <div class="shop-grid" id="shopGrid"></div>
+
+        <!-- Shown until Stripe checkout is fully set up -->
+        <div class="shop-note" id="shopNote">
+          <strong>Preview mode.</strong> These sample products show the store design and cart.
+          Follow <em>SHOP-SETUP.md</em> to connect Stripe (no monthly fee) and take real payments —
+          then this note disappears. Ask Claude any time to add a product.
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================================================================
+       CART DRAWER (demo cart for preview; Shopify's own cart/checkout takes
+       over in LIVE mode).
+       =================================================================== -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <aside class="cart-drawer" id="cartDrawer" role="dialog" aria-modal="true" aria-label="Shopping cart" aria-hidden="true">
+    <div class="cart-drawer__head">
+      <h2>Your Cart</h2>
+      <button class="cart-close" id="cartClose" aria-label="Close cart">&times;</button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <p class="cart-empty" id="cartEmpty">Your cart is empty.</p>
+    </div>
+    <div class="cart-foot">
+      <div class="cart-subtotal"><span>Subtotal</span><span id="cartSubtotal">$0.00</span></div>
+      <button class="btn btn--primary btn--lg cart-checkout" id="cartCheckout">Checkout</button>
+      <p class="form-note" id="checkoutNote">Connect Shopify to enable secure checkout &amp; payments.</p>
+    </div>
+  </aside>
+
+  <!-- ===================================================================
+       FOOTER
+       =================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a class="brand" href="index.html" aria-label="WVTR home">
+            <svg class="brand__logo" viewBox="0 0 64 64" aria-hidden="true">
+              <g fill="none" stroke="#18aaff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M32 7c0 0 17 18 17 30a17 17 0 1 1-34 0C15 25 32 7 32 7z"/>
+                <path d="M23 39a9 9 0 0 0 9 9"/>
+              </g>
+            </svg>
+            <span>WVTR<span class="brand__tag">Clean Water Projects</span></span>
+          </a>
+          <p style="margin-top:1rem;max-width:38ch;">Merch that funds clean drinking water for communities in need.</p>
+          <span class="badge-501">Registered 501(c)(3) nonprofit</span>
+        </div>
+        <div class="footer-col">
+          <h4>Shop</h4>
+          <ul>
+            <li><a href="shop.html">All Products</a></li>
+            <li><a href="index.html#donate">Donate</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="index.html#work">Our Work</a></li>
+            <li><a href="index.html#story">Our Story</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>Copyright © <span id="year">2026</span> WVTR — All Rights Reserved.</span>
+        <span>WVTR is a licensed and registered 501(c)(3).</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Config + catalog first, then behavior -->
+  <script src="assets/js/shop-config.js"></script>
+  <script src="assets/js/products.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/shop.js"></script>
+</body>
+</html>
