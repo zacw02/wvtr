@@ -3,10 +3,6 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <!-- ===================================================================
-       SEO & SOCIAL PREVIEW — edit to change Google results / link shares.
-       =================================================================== -->
   <title>WVTR — Clean Drinking Water For Those In Need</title>
   <meta name="description" content="WVTR is a registered 501(c)(3) nonprofit bringing clean drinking water to underserved communities through real-world projects, humanitarian partnerships, and sustainable water access." />
   <meta name="theme-color" content="#05080d" />
@@ -15,13 +11,12 @@
   <meta property="og:title" content="WVTR — Clean Drinking Water For Those In Need" />
   <meta property="og:description" content="Bringing clean drinking water to communities through real-world projects and sustainable water access." />
   <meta property="og:url" content="https://wvtr.org/" />
-  <meta property="og:image" content="https://wvtr.org/wp-content/uploads/2026/06/og-image.jpg" />
+  <meta property="og:image" content="assets/img/hero-poster.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
 
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <!-- Anton = bold poster display · Yellowtail = hand script · Inter = body -->
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Yellowtail&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/styles.css" />
 
@@ -34,29 +29,39 @@
   <a class="skip-link" href="#main">Skip to content</a>
 
   <!-- ===================================================================
-       HEADER / NAVIGATION — rename items by editing text; href must match
-       a section id="" below.
+       HEADER / NAV  (same markup on every page — keep them in sync)
+       Dropdowns: "Our Work" and "About".
        =================================================================== -->
   <header class="site-header" id="top">
     <div class="container">
-      <a class="brand" href="#top" aria-label="WVTR home">
-        <svg class="brand__logo" viewBox="0 0 64 64" aria-hidden="true">
-          <g fill="none" stroke="#18aaff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M32 7c0 0 17 18 17 30a17 17 0 1 1-34 0C15 25 32 7 32 7z"/>
-            <path d="M23 39a9 9 0 0 0 9 9"/>
-          </g>
-        </svg>
-        <span>WVTR<span class="brand__tag">Clean Water Projects</span></span>
+      <a class="brand brand-logo" href="index.html" aria-label="WVTR home">
+        <img class="wvtr-logo" src="assets/img/wvtr-logo.png" alt="WVTR — Clean Drinking Water For Those In Need" width="128" height="30" />
       </a>
 
       <nav class="nav" id="nav" aria-label="Primary">
-        <a href="#crisis">Crisis</a>
-        <a href="#work">Work</a>
-        <a href="#gowba">Gowba</a>
-        <a href="#story">Story</a>
+        <a href="index.html#crisis">Water Crisis</a>
+        <div class="nav-item">
+          <button class="nav-drop" aria-expanded="false">Our Work <span class="car" aria-hidden="true"></span></button>
+          <div class="dropdown">
+            <a href="services.html#well">Well Repair</a>
+            <a href="services.html#drilling">Drilling</a>
+            <a href="services.html#filters">Filters</a>
+            <a href="index.html#projects">Current Projects</a>
+            <a href="past-projects.html">Past Projects</a>
+          </div>
+        </div>
+        <a href="index.html#vital">Vital Lyfe</a>
+        <div class="nav-item">
+          <button class="nav-drop" aria-expanded="false">About <span class="car" aria-hidden="true"></span></button>
+          <div class="dropdown">
+            <a href="about.html">About WVTR</a>
+            <a href="about.html#story">Our Story</a>
+            <a href="about.html#team">The Team</a>
+            <a href="contact.html">Get in Touch</a>
+          </div>
+        </div>
         <a href="shop.html">Shop</a>
-        <a href="#contact">Contact</a>
-        <a class="btn btn--donate" href="#donate">Donate</a>
+        <a class="btn btn--donate" href="index.html#donate">Donate</a>
       </nav>
 
       <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-controls="nav" aria-expanded="false">
@@ -68,27 +73,35 @@
   <main id="main">
 
     <!-- ===================================================================
-         HERO — black, sunburst rays, poster headline + hand script,
-         traditional wave along the bottom.
-         Background video pulled from the current WVTR site; swap the
-         <source src> URL, or replace <video> with <img src alt>.
+         HERO — video of the girl + dripping WVTR logo + text overlay.
+         Video files live in assets/video/ (converted from your MOV).
          =================================================================== -->
     <section class="hero" id="hero">
       <div class="hero__media" aria-hidden="true">
-        <video autoplay muted loop playsinline poster="https://wvtr.org/wp-content/uploads/2026/06/hero-poster.jpg">
-          <source src="https://wvtr.org/wp-content/uploads/2026/06/MVI_9959.mov" type="video/quicktime" />
+        <video autoplay muted loop playsinline poster="assets/img/hero-poster.jpg">
+          <source src="assets/video/hero.webm" type="video/webm" />
+          <source src="assets/video/hero.mp4" type="video/mp4" />
         </video>
       </div>
-      <img class="hero__sun" src="assets/img/sunburst.svg" alt="" aria-hidden="true" />
       <div class="container">
         <div class="hero__inner">
+
+          <!-- Real WVTR logo with water dripping from the funnel of the V -->
+          <div class="hero__logo logo-drip">
+            <img class="wvtr-logo-img" src="assets/img/wvtr-logo.png" alt="WVTR — Clean Drinking Water For Those In Need" />
+            <span class="logo-drip__drop drip--1" aria-hidden="true"></span>
+            <span class="logo-drip__drop drip--2" aria-hidden="true"></span>
+            <span class="logo-drip__ripple ripple--1" aria-hidden="true"></span>
+            <span class="logo-drip__ripple ripple--2" aria-hidden="true"></span>
+          </div>
+
           <span class="banner">Registered 501(c)(3)</span>
           <h1>Clean Water</h1>
           <span class="hero__script">for those in need</span>
           <p class="hero__lead">WVTR brings clean drinking water to communities through real-world projects, humanitarian partnerships, and sustainable water access.</p>
           <div class="hero__actions">
             <a class="btn btn--donate btn--lg" href="#donate">Give Water. Give Life.</a>
-            <a class="btn btn--on-dark btn--lg" href="#work">See Our Work</a>
+            <a class="btn btn--on-dark btn--lg" href="#projects">See Our Work</a>
           </div>
         </div>
       </div>
@@ -99,7 +112,7 @@
       </a>
     </section>
 
-    <!-- Marquee band -->
+    <!-- Marquee -->
     <div class="marquee" aria-hidden="true">
       <div class="marquee__track" id="marquee">
         <span>Clean Water</span><span>Give Life</span><span>Real Projects</span><span>Lasting Access</span><span>Clean Water</span><span>Give Life</span><span>Real Projects</span><span>Lasting Access</span>
@@ -107,7 +120,7 @@
     </div>
 
     <!-- ===================================================================
-         01 · THE WATER CRISIS  (dark)
+         01 · WATER CRISIS
          =================================================================== -->
     <section class="section sec-dark" id="crisis">
       <div class="container">
@@ -118,45 +131,29 @@
           <p class="lead">Water affects health, hygiene, education, safety, opportunity, and time. When clean water becomes accessible, everything around it begins to change.</p>
         </div>
 
-        <div class="grid-crisis">
-          <article class="crisis reveal">
-            <span class="crisis__no">/01</span>
-            <div class="crisis__ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2s6 6.5 6 11a6 6 0 1 1-12 0C6 8.5 12 2 12 2z"/></svg></div>
-            <h3>The Walk</h3>
-            <p>Families carry water for miles because access is not close enough — time that could go to school, work, and family.</p>
-          </article>
-          <article class="crisis reveal">
-            <span class="crisis__no">/02</span>
-            <div class="crisis__ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
-            <h3>200 Million Hours</h3>
-            <p>Every day, communities lose hundreds of millions of hours collecting water — hours that nearby access gives back.</p>
-          </article>
-          <article class="crisis reveal">
-            <span class="crisis__no">/03</span>
-            <div class="crisis__ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="3.5"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg></div>
-            <h3>Bacteria &amp; Disease</h3>
-            <p>Contaminated water spreads illness that keeps children out of school and families out of work. Clean water breaks the cycle.</p>
-          </article>
-          <article class="crisis reveal">
-            <span class="crisis__no">/04</span>
-            <div class="crisis__ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg></div>
-            <h3>Access</h3>
-            <p>Clean water should be close, safe, and reliable. Reliable access is the foundation everything else is built on.</p>
-          </article>
+        <div class="split" style="margin-bottom:var(--sp-6)">
+          <div class="split__media reveal"><div class="frame frame--wide"><img src="assets/img/photos/woman-clean-dirty.jpg" alt="A woman holds a glass of clean filtered water beside a glass of dirty water" loading="lazy" /></div></div>
+          <div class="split__body reveal">
+            <h3 style="color:#fff">The difference is <span class="script">everything</span></h3>
+            <p>In one hand, clean water from a filter. In the other, the water families drink every day. WVTR closes that gap — filter by filter, well by well.</p>
+          </div>
         </div>
-      </div>
-    </section>
 
-    <!-- ===================================================================
-         IMPACT STATS  (dark) — update numbers as projects grow.
-         =================================================================== -->
-    <section class="section sec-dark" id="impact" style="padding-top:0">
-      <div class="container">
-        <div class="section__head">
-          <span class="banner">Our Impact So Far</span>
-          <h2>Real Projects. <span class="script">real people</span></h2>
+        <div class="grid-crisis">
+          <article class="crisis reveal"><span class="crisis__no">/01</span>
+            <div class="crisis__ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2s6 6.5 6 11a6 6 0 1 1-12 0C6 8.5 12 2 12 2z"/></svg></div>
+            <h3>The Walk</h3><p>Families carry water for miles because access is not close enough — time that could go to school, work, and family.</p></article>
+          <article class="crisis reveal"><span class="crisis__no">/02</span>
+            <div class="crisis__ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+            <h3>200 Million Hours</h3><p>Every day, communities lose hundreds of millions of hours collecting water — hours that nearby access gives back.</p></article>
+          <article class="crisis reveal"><span class="crisis__no">/03</span>
+            <div class="crisis__ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="3.5"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg></div>
+            <h3>Bacteria &amp; Disease</h3><p>Contaminated water spreads illness that keeps children out of school and families out of work. Clean water breaks the cycle.</p></article>
+          <article class="crisis reveal"><span class="crisis__no">/04</span>
+            <div class="crisis__ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <h3>Access</h3><p>Clean water should be close, safe, and reliable. Reliable access is the foundation everything else is built on.</p></article>
         </div>
-        <div class="stats">
+        <div class="stats" style="margin-top:var(--sp-6)">
           <div class="stat reveal"><div class="stat__num" data-count="700" data-suffix="+">700+</div><div class="stat__label">People given clean water access</div></div>
           <div class="stat reveal"><div class="stat__num" data-count="100" data-suffix="">100</div><div class="stat__label">Sawyer filtration systems deployed</div></div>
           <div class="stat reveal"><div class="stat__num" data-count="2" data-suffix="">2</div><div class="stat__label">Countries served — Ethiopia &amp; Haiti</div></div>
@@ -165,265 +162,122 @@
       </div>
     </section>
 
-    <!-- Wave divider (dark → light) -->
     <div class="wave-divider" aria-hidden="true"><img src="assets/img/wave.svg" alt="" /></div>
 
     <!-- ===================================================================
-         02 · OUR WORK  (light) — completed + upcoming projects.
-         Add a project: copy an <article class="project"> block.
-         Real photo: replace the <div class="placeholder"> with
-         <img src="assets/img/your-photo.jpg" alt="describe the photo" />.
+         02 · DONATE  (DonorBox)
          =================================================================== -->
-    <section class="section sec-light" id="work">
+    <section class="section sec-light" id="donate">
       <div class="container">
         <div class="section__head">
           <span class="index-num" aria-hidden="true">02</span>
-          <span class="banner">Our Work</span>
-          <h2>Where We've Been — <span class="script">&amp; where we go next</span></h2>
-          <p class="lead">Every project is real, on the ground, and built with local partners for lasting water access.</p>
-        </div>
-
-        <div class="projects">
-          <article class="project reveal">
-            <div class="project__media">
-              <div class="placeholder"><span>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-                Photo: Ethiopia field work
-              </span></div>
-            </div>
-            <div class="project__scrim" aria-hidden="true"></div>
-            <div class="project__body">
-              <span class="project__tag">Completed · Ethiopia</span>
-              <h3>Filtration for 700+</h3>
-              <p>100 Sawyer filtration systems delivered to families and community members in need.</p>
-            </div>
-          </article>
-
-          <article class="project reveal">
-            <div class="project__media">
-              <div class="placeholder"><span>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-                Photo: Haiti well repair
-              </span></div>
-            </div>
-            <div class="project__scrim" aria-hidden="true"></div>
-            <div class="project__body">
-              <span class="project__tag">Completed · Haiti</span>
-              <h3>Well Repairs</h3>
-              <p>Funded well repairs across multiple communities, restoring safe water close to home.</p>
-            </div>
-          </article>
-
-          <article class="project reveal">
-            <div class="project__media">
-              <div class="placeholder"><span>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
-                Map: upcoming regions
-              </span></div>
-            </div>
-            <div class="project__scrim" aria-hidden="true"></div>
-            <div class="project__body">
-              <span class="project__tag project__tag--soon">Coming Soon</span>
-              <h3>Next Deployments</h3>
-              <p>Haiti, Madagascar, Fiji, Kiribati, and coastal regions — the future of WVTR isn't centralized.</p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Wave divider (light → dark) -->
-    <div class="wave-divider wave-divider--flip" aria-hidden="true"><img src="assets/img/wave.svg" alt="" /></div>
-
-    <!-- ===================================================================
-         03 · PROJECT GOWBA  (dark) — flagship, asymmetric split.
-         =================================================================== -->
-    <section class="section sec-dark" id="gowba">
-      <div class="container">
-        <div class="split">
-          <div class="split__media reveal">
-            <div class="frame">
-              <div class="placeholder"><span>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-                Video / photo: Project Gowba
-              </span></div>
-            </div>
-          </div>
-          <div class="split__body reveal">
-            <span class="index-num" aria-hidden="true">03</span>
-            <span class="banner">Flagship Project</span>
-            <h2>Project <span class="script">Gowba</span></h2>
-            <p>Project Gowba is WVTR's on-the-ground commitment to a community that needs reliable water most. It combines filters, education, and infrastructure so clean water stays close, safe, and dependable long after the team leaves.</p>
-            <p><strong style="color:#fff;">Field work means:</strong> filters, education, community support, and clean water access — delivered directly, and built to last.</p>
-            <a class="btn btn--primary mt-4" href="#donate">Support Project Gowba</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===================================================================
-         04 · OUR STORY  (light) — reversed split.
-         =================================================================== -->
-    <section class="section sec-light" id="story">
-      <div class="container">
-        <div class="split split--reverse">
-          <div class="split__media reveal">
-            <div class="frame frame--wide">
-              <div class="placeholder"><span>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-                Photo: WVTR team in the field
-              </span></div>
-            </div>
-          </div>
-          <div class="split__body reveal">
-            <span class="index-num" aria-hidden="true">04</span>
-            <span class="banner">Our Story</span>
-            <h2>Not <span class="script">centralized</span></h2>
-            <p>WVTR was built on a simple belief: clean water should be close, safe, and reliable for everyone. We work through real-world projects and humanitarian partnerships, going directly to the communities that need water access most.</p>
-            <p>As a registered 501(c)(3) nonprofit, every project is transparent, hands-on, and designed for lasting impact — not a one-time fix, but sustainable access that keeps giving time, health, and opportunity back to families.</p>
-            <a class="btn btn--outline mt-4" href="#contact">Get In Touch</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Wave divider (light → dark) -->
-    <div class="wave-divider wave-divider--flip" aria-hidden="true"><img src="assets/img/wave.svg" alt="" /></div>
-
-    <!-- ===================================================================
-         05 · TEAM  (dark) — REPLACE names, roles, bios, photos.
-         Copy an <article class="member"> block to add a person.
-         =================================================================== -->
-    <section class="section sec-dark" id="team">
-      <div class="container">
-        <div class="section__head center">
-          <span class="banner">The Team</span>
-          <h2>The People <span class="script">behind it</span></h2>
-          <p class="lead" style="margin-inline:auto;">The volunteers and partners who make every project possible.</p>
-        </div>
-        <div class="team-grid">
-          <article class="member reveal">
-            <div class="member__photo"><div class="placeholder"><span>Photo</span></div></div>
-            <h3>Team Member</h3>
-            <div class="role">Founder</div>
-            <p>Add a short bio here — a line or two about their role and why they care about clean water.</p>
-          </article>
-          <article class="member reveal">
-            <div class="member__photo"><div class="placeholder"><span>Photo</span></div></div>
-            <h3>Team Member</h3>
-            <div class="role">Field Operations</div>
-            <p>Add a short bio here — a line or two about their role and why they care about clean water.</p>
-          </article>
-          <article class="member reveal">
-            <div class="member__photo"><div class="placeholder"><span>Photo</span></div></div>
-            <h3>Team Member</h3>
-            <div class="role">Partnerships</div>
-            <p>Add a short bio here — a line or two about their role and why they care about clean water.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Wave divider (dark → light) -->
-    <div class="wave-divider" aria-hidden="true"><img src="assets/img/wave.svg" alt="" /></div>
-
-    <!-- ===================================================================
-         06 · DONATE  (light) — DonorBox embed (campaign "wvtr-projects").
-         Change the campaign name in the iframe src to switch campaigns.
-         =================================================================== -->
-    <section class="section sec-alt" id="donate">
-      <div class="container">
-        <div class="section__head">
-          <span class="index-num" aria-hidden="true">06</span>
           <span class="banner">Donate</span>
           <h2>Give Water. <span class="script">give life</span></h2>
           <p class="lead">Your gift funds filters, well repairs, storage tanks, and field operations — going directly to the communities that need it.</p>
         </div>
-
         <div class="donate-wrap">
           <div class="donate-copy reveal">
             <h3 style="color:var(--black)">Where Your Gift Goes</h3>
             <ul class="impact-list">
-              <li><span class="chk" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span><span><strong style="color:var(--black)">Filters</strong> — Sawyer filtration systems that make water safe to drink at the source.</span></li>
-              <li><span class="chk" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span><span><strong style="color:var(--black)">Well repairs</strong> — restoring broken water sources so whole communities regain access.</span></li>
-              <li><span class="chk" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span><span><strong style="color:var(--black)">Storage tanks</strong> — reliable storage that keeps clean water available year-round.</span></li>
-              <li><span class="chk" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span><span><strong style="color:var(--black)">Field operations</strong> — boots-on-the-ground work, education, and community support.</span></li>
+              <li><span class="chk" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span><span><strong style="color:var(--black)">Filters</strong> — Sawyer systems that make water safe at the source.</span></li>
+              <li><span class="chk" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span><span><strong style="color:var(--black)">Well repairs</strong> — restoring broken water sources for whole communities.</span></li>
+              <li><span class="chk" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span><span><strong style="color:var(--black)">Storage tanks</strong> — reliable storage that keeps water available year-round.</span></li>
+              <li><span class="chk" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span><span><strong style="color:var(--black)">Field operations</strong> — boots-on-the-ground work, education, and support.</span></li>
             </ul>
-            <p class="form-note" style="color:var(--ink-soft)">WVTR is a registered 501(c)(3) nonprofit — donations may be tax-deductible.</p>
+            <p class="form-note" style="color:var(--ink-soft)">WVTR is a registered 501(c)(3) — donations may be tax-deductible.</p>
           </div>
-
           <div class="donate-embed reveal">
-            <iframe
-              src="https://donorbox.org/embed/wvtr-projects?show_content=true"
-              name="donorbox" title="Donate to WVTR" allow="payment"
-              seamless loading="lazy" scrolling="no"></iframe>
+            <iframe src="https://donorbox.org/embed/wvtr-projects?show_content=true" name="donorbox" title="Donate to WVTR" allow="payment" seamless loading="lazy" scrolling="no"></iframe>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Wave divider (light → dark) -->
     <div class="wave-divider wave-divider--flip" aria-hidden="true"><img src="assets/img/wave.svg" alt="" /></div>
 
     <!-- ===================================================================
-         07 · CONTACT  (dark) — UPDATE email, phone, location.
-         Form posts to Formspree; replace "your-form-id" with a real endpoint.
+         03 · SHOP (teaser → shop.html)
          =================================================================== -->
-    <section class="section sec-dark" id="contact">
+    <section class="section sec-dark" id="shop">
       <div class="container">
-        <div class="section__head">
-          <span class="index-num" aria-hidden="true">07</span>
-          <span class="banner">Contact Us</span>
-          <h2>Get In <span class="script">touch</span></h2>
-          <p class="lead">Questions, partnerships, or press — we'd love to hear from you.</p>
-        </div>
-
-        <div class="contact-grid">
+        <div class="shop-teaser">
           <div class="reveal">
-            <ul class="contact-list">
-              <li>
-                <span class="ic" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>
-                <span><strong style="color:#fff">Email</strong><br /><a href="mailto:info@wvtr.org">info@wvtr.org</a> <em>(update with real address)</em></span>
-              </li>
-              <li>
-                <span class="ic" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2z"/></svg></span>
-                <span><strong style="color:#fff">Phone</strong><br /><a href="tel:+10000000000">(000) 000-0000</a> <em>(update with real number)</em></span>
-              </li>
-              <li>
-                <span class="ic" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
-                <span><strong style="color:#fff">Based in</strong><br />United States · Working worldwide</span>
-              </li>
-            </ul>
+            <span class="index-num" aria-hidden="true">03</span>
+            <span class="banner">Shop</span>
+            <h2>Wear It. <span class="script">fund it</span></h2>
+            <p class="lead">Every purchase helps fund clean drinking water projects. Merch that means something — tees, hoodies, stickers, and more.</p>
+            <a class="btn btn--primary btn--lg mt-4" href="shop.html">Visit the Shop</a>
           </div>
-
-          <form class="reveal" action="https://formspree.io/f/your-form-id" method="POST">
-            <div class="form-field">
-              <label for="cf-name">Name</label>
-              <input type="text" id="cf-name" name="name" autocomplete="name" required />
-            </div>
-            <div class="form-field">
-              <label for="cf-email">Email</label>
-              <input type="email" id="cf-email" name="email" autocomplete="email" required />
-            </div>
-            <div class="form-field">
-              <label for="cf-message">Message</label>
-              <textarea id="cf-message" name="message" rows="5" required></textarea>
-            </div>
-            <button type="submit" class="btn btn--primary btn--lg">Send Message</button>
-            <p class="form-note">This form needs a free Formspree ID (or similar) to deliver mail — ask Claude to finish connecting it.</p>
-          </form>
+          <div class="shop-teaser__media reveal">
+            <div class="frame"><div class="placeholder"><span>Photo: Tee</span></div></div>
+            <div class="frame"><div class="placeholder"><span>Photo: Hoodie</span></div></div>
+          </div>
         </div>
       </div>
     </section>
 
+    <div class="wave-divider wave-divider--flip" aria-hidden="true" style="color:#000"><img src="assets/img/wave.svg" alt="" /></div>
+
     <!-- ===================================================================
-         CLOSING STATEMENT  (light)
+         04 · VITAL LYFE (partner / sub-brand)
+         Replace the copy + link with the real Vital Lyfe details.
          =================================================================== -->
+    <section class="section sec-light" id="vital">
+      <div class="container">
+        <div class="vital">
+          <div class="split__media reveal">
+            <div class="frame frame--wide"><div class="placeholder"><span>Vital Lyfe — logo / photo</span></div></div>
+          </div>
+          <div class="reveal">
+            <span class="index-num" aria-hidden="true">04</span>
+            <span class="vital__badge">Partner Brand</span>
+            <h2>Vital <span class="script">Lyfe</span></h2>
+            <p class="lead">Vital Lyfe is WVTR's partner brand — [add a sentence or two on who they are and how the partnership funds clean-water work]. Every Vital Lyfe purchase helps put clean water in the hands of families who need it.</p>
+            <a class="btn btn--outline mt-4" href="#" id="vital-link">Learn about Vital Lyfe</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="wave-divider wave-divider--flip" aria-hidden="true"><img src="assets/img/wave.svg" alt="" /></div>
+
+    <!-- ===================================================================
+         05 · CURRENT PROJECTS
+         =================================================================== -->
+    <section class="section sec-dark" id="projects">
+      <div class="container">
+        <div class="section__head">
+          <span class="index-num" aria-hidden="true">05</span>
+          <span class="banner">Current Projects</span>
+          <h2>On The Ground <span class="script">right now</span></h2>
+          <p class="lead">Every project is real, built with local partners for lasting water access. <a href="past-projects.html" style="color:var(--blue)">See past projects →</a></p>
+        </div>
+        <div class="projects">
+          <article class="project reveal">
+            <div class="project__media"><img src="assets/img/photos/fiji-filter.jpg" alt="A boy demonstrates a Sawyer water filter to a crowd of children in Fiji" loading="lazy" /></div>
+            <div class="project__scrim" aria-hidden="true"></div>
+            <div class="project__body"><span class="project__tag">Active · Fiji</span><h3>Filters for a Village</h3><p>Sawyer filtration demonstrated for the whole community — clean water at the source.</p></div>
+          </article>
+          <article class="project reveal">
+            <div class="project__media"><img src="assets/img/photos/haiti-distribution.jpg" alt="Families in Haiti gathered with water storage buckets" loading="lazy" /></div>
+            <div class="project__scrim" aria-hidden="true"></div>
+            <div class="project__body"><span class="project__tag">Active · Haiti</span><h3>Repairs &amp; Distribution</h3><p>Restoring safe water and distributing storage to families across communities.</p></div>
+          </article>
+          <article class="project reveal">
+            <div class="project__media"><img src="assets/img/photos/india-filters.jpg" alt="Women in India receiving bucket water filtration systems" loading="lazy" /></div>
+            <div class="project__scrim" aria-hidden="true"></div>
+            <div class="project__body"><span class="project__tag">Active · India</span><h3>Household Filters</h3><p>Bucket filtration systems delivered to families for safe water at home.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Closing CTA -->
     <section class="section sec-light">
       <div class="container">
         <div class="statement reveal">
           <span class="script">clean water</span>
-          <h2>Changes <span class="hl">Everything.</span></h2>
+          <h2>Changes <span class="hl" style="color:var(--blue)">Everything.</span></h2>
           <a class="btn btn--donate btn--lg mt-4" href="#donate">Donate Now</a>
         </div>
       </div>
@@ -431,42 +285,32 @@
 
   </main>
 
-  <!-- ===================================================================
-       FOOTER
-       =================================================================== -->
+  <!-- FOOTER (same on every page) -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-col">
-          <a class="brand" href="#top" aria-label="WVTR home">
-            <svg class="brand__logo" viewBox="0 0 64 64" aria-hidden="true">
-              <g fill="none" stroke="#18aaff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M32 7c0 0 17 18 17 30a17 17 0 1 1-34 0C15 25 32 7 32 7z"/>
-                <path d="M23 39a9 9 0 0 0 9 9"/>
-              </g>
-            </svg>
-            <span>WVTR<span class="brand__tag">Clean Water Projects</span></span>
-          </a>
+          <a class="brand brand-logo" href="index.html" aria-label="WVTR home"><img class="wvtr-logo" src="assets/img/wvtr-logo.png" alt="WVTR" width="140" height="33" /></a>
           <p style="margin-top:1rem;max-width:38ch;">Bringing clean drinking water to communities through real-world projects, humanitarian partnerships, and sustainable water access.</p>
           <span class="badge-501">Registered 501(c)(3) nonprofit</span>
         </div>
         <div class="footer-col">
           <h4>Explore</h4>
           <ul>
-            <li><a href="#crisis">Water Crisis</a></li>
-            <li><a href="#work">Our Work</a></li>
-            <li><a href="#gowba">Project Gowba</a></li>
-            <li><a href="#story">Our Story</a></li>
-            <li><a href="#team">Team</a></li>
+            <li><a href="index.html#crisis">Water Crisis</a></li>
+            <li><a href="services.html">Well Repair · Drilling · Filters</a></li>
+            <li><a href="index.html#projects">Current Projects</a></li>
+            <li><a href="past-projects.html">Past Projects</a></li>
+            <li><a href="index.html#vital">Vital Lyfe</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h4>Get Involved</h4>
           <ul>
-            <li><a href="shop.html">Shop Merch</a></li>
-            <li><a href="#donate">Donate</a></li>
-            <li><a href="#contact">Contact Us</a></li>
-            <li><a href="#impact">Our Impact</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="index.html#donate">Donate</a></li>
+            <li><a href="about.html">About WVTR</a></li>
+            <li><a href="contact.html">Get in Touch</a></li>
           </ul>
         </div>
       </div>

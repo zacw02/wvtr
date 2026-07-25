@@ -34,6 +34,26 @@
     });
   }
 
+  /* ---- Dropdown menus (Our Work / About) --------------------------------- */
+  var drops = document.querySelectorAll(".nav-drop");
+  drops.forEach(function (btn) {
+    btn.addEventListener("click", function (e) {
+      e.preventDefault();
+      var item = btn.closest(".nav-item");
+      var open = item.classList.toggle("open");
+      btn.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+  });
+  // Close open dropdowns when clicking elsewhere (desktop)
+  document.addEventListener("click", function (e) {
+    if (!e.target.closest(".nav-item")) {
+      document.querySelectorAll(".nav-item.open").forEach(function (i) {
+        i.classList.remove("open");
+        var b = i.querySelector(".nav-drop"); if (b) b.setAttribute("aria-expanded", "false");
+      });
+    }
+  });
+
   /* ---- Sticky header shadow on scroll ------------------------------------ */
   var header = document.querySelector(".site-header");
   function onScroll() {

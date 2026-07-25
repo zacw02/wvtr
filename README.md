@@ -13,9 +13,15 @@ and easy to update through Claude.
 
 ```
 wvtr-site/
-├── index.html                       ← Home page (one scrolling page)
+├── index.html                       ← Home page (video hero, dripping logo, flow)
 ├── shop.html                        ← The storefront (products + cart)
+├── about.html                       ← About + Our Story + The Team
+├── services.html                    ← Our Work: Well Repair · Drilling · Filters
+├── past-projects.html               ← Completed projects
+├── contact.html                     ← Get in Touch
 ├── assets/
+│   ├── video/hero.mp4, hero.webm    ← Hero video (converted from your MOV)
+│   ├── img/wvtr-logo.svg            ← WVTR wordmark logo (swap for the real file)
 │   ├── css/styles.css               ← All design & layout
 │   ├── js/main.js                   ← Menu, animations, interactions
 │   ├── js/products.js               ← The product catalog (edit here)
