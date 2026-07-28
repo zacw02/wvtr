@@ -522,3 +522,38 @@ p  { margin: 0 0 1rem; }
 .logo-drip__ripple.ripple--1 { animation: logoripple 2.8s ease-out infinite .1s; }
 .logo-drip__ripple.ripple--2 { animation: logoripple 2.8s ease-out infinite 1.5s; }
 @media (prefers-reduced-motion: reduce) { .logo-drip__drop, .logo-drip__ripple { animation: none; opacity: 0; } }
+
+/* --- Realistic, translucent water dripping from the nav-bar logo --- */
+.nav-drip { position: relative; }
+.nav-drip__drop {
+  position: absolute; top: 78%; width: 6px; height: 7px; margin-left: -3px;
+  border-radius: 50% 50% 50% 50% / 60% 60% 42% 42%;
+  /* mostly transparent glassy water bead: bright specular highlight, faint blue body */
+  background: radial-gradient(115% 80% at 34% 24%,
+    rgba(255,255,255,.85) 0%,
+    rgba(215,238,255,.30) 32%,
+    rgba(150,205,245,.14) 62%,
+    rgba(110,175,225,.08) 100%);
+  box-shadow:
+    inset 0 -1.5px 2px rgba(90,160,215,.30),
+    inset .5px .8px 1px rgba(255,255,255,.75),
+    0 1px 2px rgba(20,70,120,.16);
+  opacity: 0; pointer-events: none; will-change: transform, opacity;
+}
+/* forms a bead, swells, necks, breaks off, falls and fades */
+@keyframes navdrip {
+  0%   { transform: translateY(0) scale(.35,.35); opacity: 0; }
+  10%  { transform: translateY(0) scale(1,.9);    opacity: .5; }
+  32%  { transform: translateY(1px) scaleX(.85) scaleY(1.25); opacity: .68; }
+  46%  { transform: translateY(4px) scaleX(.7) scaleY(1.4);   opacity: .72; }
+  70%  { transform: translateY(15px) scaleX(.8) scaleY(1.2);  opacity: .45; }
+  100% { transform: translateY(26px) scaleX(.65) scaleY(1);   opacity: 0; }
+}
+/* staggered, irregular timing so drips feel natural — from around the blue "V" */
+.nav-drip__drop.nd--1 { left: 46%; animation: navdrip 3.8s ease-in .4s infinite; }
+.nav-drip__drop.nd--2 { left: 51%; width: 5px; height: 6px; animation: navdrip 4.6s ease-in 2.2s infinite; }
+.nav-drip__drop.nd--3 { left: 41%; width: 4px; height: 5px; animation: navdrip 5.4s ease-in 3.7s infinite; }
+@media (prefers-reduced-motion: reduce) { .nav-drip__drop { animation: none; opacity: 0; } }
+
+/* --- Vital Lyfe partner image fills its frame --- */
+.vital__img { display: block; width: 100%; height: 100%; object-fit: cover; }
